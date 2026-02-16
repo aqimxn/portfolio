@@ -1,43 +1,219 @@
+:root {
+  --theme-color: rgb(225, 236, 181);
+  --bg-dark: #121212;
+  --bg-card: #1e1e1e;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
+body {
+  background-color: var(--bg-dark) !important;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: #ffffff;
+/* Navbar */
+.navbar {
+  transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
-a:active,
-a:hover,
-a:focus,
-.active {
-    background-color: rgba(216, 236, 36, 0.2);
-    color: #b8d74a;
+.navbar.scrolled {
+  background-color: rgba(18, 18, 18, 0.9) !important;
+  backdrop-filter: blur(10px);
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
-video {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    box-sizing: content-box;
+.nav-link {
+  color: #fff !important;
+  position: relative;
+  font-weight: 500;
 }
 
-.type-loop::after{
-    content:"|";
-    margin-left: 6px;
-    animation: blink 0.8s infinite;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--theme-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
-@keyframes blink { 50% { opacity: 0; } }
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80%;
+}
+
+.nav-link.active {
+  color: var(--theme-color) !important;
+}
+
+/* Utilities */
+.text-theme {
+  color: var(--theme-color) !important;
+}
+
+.border-theme {
+  border: 1px solid var(--theme-color) !important;
+}
+
+.bg-dark-theme {
+  background-color: #1a1a1a;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Type Loop Cursor */
+.type-loop::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Cards & Hover Effects */
+.card-custom {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--theme-color);
+}
+
+.activity-card .card-custom {
+  transform: none;
+}
+
+/* Skills Icons */
+.skill-item {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  transform: scale(1.1);
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+/* Animations */
+.fade-up,
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible,
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left.visible,
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Indicators */
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Activities Carousel */
+#activities-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+#activities-container {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.activity-card {
+  width: 100%;
+  /* Default mobile: 1 item */
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .activity-card {
+    width: calc(50% - 12px);
+    /* Desktop: 2 items (gap-4 is 24px, so -12px each) */
+  }
+}
+
+
+.carousel-nav {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* translucent background */
+  backdrop-filter: blur(5px);
+}
+
+.carousel-nav:hover {
+  background-color: var(--theme-color);
+  color: #000;
+  border-color: var(--theme-color);
+}
+
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .display-1 {
+    font-size: 3.5rem;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+}

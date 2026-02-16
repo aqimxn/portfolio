@@ -1,0 +1,314 @@
+{
+    "header": [
+        {
+            "name": "Home",
+            "link": "#home"
+        },
+        {
+            "name": "About",
+            "link": "#about"
+        },
+        {
+            "name": "Education",
+            "link": "#education"
+        },
+        {
+            "name": "Skills",
+            "link": "#skills"
+        },
+        {
+            "name": "Projects",
+            "link": "#projects"
+        },
+        {
+            "name": "Contact",
+            "link": "#contact"
+        }
+    ],
+    "hero": {
+        "title": "My",
+        "type_words": "Portfolio,Identity,Style",
+        "type_colors": "#d4e499,#acb882,#bfc7a1,#d9dfc3",
+        "subtitle": "Aqiman | Software Developer Intern"
+    },
+    "about": {
+        "text_left": "Hi, I'm Muhammad Aqiman👋<br>a compsci fresh-grad who passionate about building things with code and automation.",
+        "text_right": "I'm curious by default, always learning new tools, and pushing myself by building projects that actually get used.",
+        "image": "assets/img/my-picture.png"
+    },
+    "education": [
+        {
+            "category": "Matriculation",
+            "institution": "Johore Matriculation College",
+            "logo": "assets/img/kmj-logo.png",
+            "location": "Tangkak, Johor",
+            "course": "Foundation in Accounting",
+            "years": "Mar 2021 - Feb 2022",
+            "cgpa": "4.00",
+            "activities": [
+                "Top 2 on Mathematics Examination across all practicums.",
+                "Peer Assisted Learning Leader (PAL) Leader in Mathematics",
+                "President of Accommodation College Committee",
+                "Active member of the Debate Club",
+                "Participant in National Math Olympiad",
+                "Volunteer for Flood Relief Program"
+            ]
+        },
+        {
+            "category": "Bachelor Degree",
+            "institution": "Universiti Teknologi Mara",
+            "logo": "assets/img/uitm-logo.png",
+            "location": "Jasin, Melaka",
+            "course": "Bachelor of Computer Science (Hons.)",
+            "years": "Aug 2022 - Dec 2025",
+            "cgpa": "3.59",
+            "activities": [
+                "ANC Recipient (Vice Chancellor Award)",
+                "Project Lead for 'Code for Good' Hackathon",
+                "Secretary of Computer Science Society",
+                "Mentor for Junior Web Development Workshop"
+            ]
+        },
+        {
+            "category": "Internship",
+            "institution": "Awanpro Solutions Sdn Bhd",
+            "logo": "assets/img/awanpro-logo.png",
+            "location": "Cyberjaya, Selangor",
+            "course": "Software Developer Intern",
+            "years": "Sept 2025 - Mar 2026",
+            "details": "Developed full-stack web applications using Laravel. Collaborated with senior developers to optimize database queries. Implemented RESTful APIs for mobile app integration. Participated in daily agile scrums and code reviews.",
+            "activities": []
+        }
+    ],
+    "activities_gallery": [
+        {
+            "category": "Bachelor Degree",
+            "image": "assets/img/project1.png",
+            "description": "Led the 'Code for Good' hackathon team to victory, developing a solution for sustainable waste management."
+        },
+        {
+            "category": "Bachelor Degree",
+            "image": "assets/img/project2.png",
+            "description": "Organized a university-wide coding workshop for over 200 participants as the Secretary of CS Society."
+        },
+        {
+            "category": "Bachelor Degree",
+            "image": "assets/img/project3.png",
+            "description": "Represented the university in the National Math Olympiad, securing a top 10 finish."
+        },
+        {
+            "category": "Internship",
+            "image": "assets/img/project4.png",
+            "description": "Collaborated with the design team to implement a new responsive UI for the company's main product."
+        },
+        {
+            "category": "Internship",
+            "image": "assets/img/project5.png",
+            "description": "Presented the final internship project to the stakeholders and received commendation for technical depth."
+        }
+    ],
+    "skills": {
+        "technical": [
+            {
+                "name": "Laravel",
+                "icon": "assets/img/laravel-icon.svg",
+                "level": "Proficient"
+            },
+            {
+                "name": "Flask",
+                "icon": "assets/img/flask-icon.png",
+                "level": "Proficient"
+            },
+            {
+                "name": "Python",
+                "icon": "assets/img/python-icon.svg",
+                "level": "Proficient"
+            },
+            {
+                "name": "Machine Learning",
+                "icon": "assets/img/machine-learning-icon.png",
+                "level": "Intermediate"
+            },
+            {
+                "name": "C++",
+                "icon": "assets/img/c++-icon.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "assets/img/javascript-icon.svg",
+                "level": "Beginner"
+            },
+            {
+                "name": "PostgreSQL",
+                "icon": "assets/img/postgresql-icon.svg",
+                "level": "Proficient"
+            },
+            {
+                "name": "MySQL",
+                "icon": "assets/img/mysql-icon.svg",
+                "level": "Proficient"
+            },
+            {
+                "name": "MongoDB",
+                "icon": "assets/img/mongodb-icon.svg",
+                "level": "Beginner"
+            },
+            {
+                "name": "SQLite",
+                "icon": "assets/img/sqlite-icon.svg",
+                "level": "Proficient"
+            },
+            {
+                "name": "Git",
+                "icon": "assets/img/git-icon.svg",
+                "level": "Proficient"
+            },
+            {
+                "name": "Postman",
+                "icon": "assets/img/postman-icon.svg",
+                "level": "Beginner"
+            },
+            {
+                "name": "PowerBI",
+                "icon": "assets/img/powerbi-icon.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Tableau",
+                "icon": "assets/img/tableau-icon.svg",
+                "level": "Beginner"
+            },
+            {
+                "name": "Word",
+                "icon": "assets/img/word-icon.svg",
+                "level": "Proficient"
+            },
+            {
+                "name": "Excel",
+                "icon": "assets/img/excel-icon.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Powerpoint",
+                "icon": "assets/img/powerpoint-icon.svg",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Canva",
+                "icon": "assets/img/canva-icon.svg",
+                "level": "Proficient"
+            }
+        ],
+        "certifications": [
+            {
+                "name": "Full Stack Web Development",
+                "issuer": "Udemy",
+                "year": "2024",
+                "icon_class": "fa-solid fa-certificate",
+                "description": "Comprehensive course covering React, Node.js, and SQL."
+            },
+            {
+                "name": "AWS Cloud Practitioner",
+                "issuer": "Amazon Web Services",
+                "year": "2023",
+                "icon_class": "fa-brands fa-aws",
+                "description": "Foundational knowledge of cloud concepts and security."
+            }
+        ],
+        "soft_skills": [
+            "Malay",
+            "English",
+            "Problem Solving",
+            "Teamwork",
+            "Communication",
+            "Time Management",
+            "Adaptability",
+            "Leadership",
+            "Critical Thinking"
+        ]
+    },
+    "projects": [
+        {
+            "title": "SaaS Barbershop",
+            "image": "assets/img/saas-barbershop.png",
+            "description": "A responsive SaaS Barbershop website built with Laravel, PostgeSQL, and Bootstrap.",
+            "tech_stack": [
+                "Laravel",
+                "PostgreSQL",
+                "Bootstrap"
+            ],
+            "link": "#"
+        },
+        {
+            "title": "Billing System",
+            "image": "assets/img/billing-system.png",
+            "description": "A billing system application with payment gateway integration.",
+            "tech_stack": [
+                "Laravel",
+                "PostgreSQL"
+            ],
+            "link": "#"
+        },
+        {
+            "title": "GUI Folder Management",
+            "image": "assets/img/gui-folder-management.png",
+            "description": "A GUI folder management application with file organization and management features.",
+            "tech_stack": [
+                "Python",
+                "Tkinter"
+            ],
+            "link": "#"
+        },
+        {
+            "title": "Skillytics",
+            "image": "assets/img/skillytics.png",
+            "description": "A skill-based learning platform with personalized learning paths and progress tracking.",
+            "tech_stack": [
+                "Flask",
+                "SQLite"
+            ],
+            "link": "#"
+        },
+        {
+            "title": "Reward Management System",
+            "image": "assets/img/reward-management-system.png",
+            "description": "A reward management system application with reward tracking and management features.",
+            "tech_stack": [
+                "Java",
+                "MySQL"
+            ],
+            "link": "#"
+        },
+        {
+            "title": "ATM Management System",
+            "image": "assets/img/atm-management-system.png",
+            "description": "An ATM management system application with ATM card management features.",
+            "tech_stack": [
+                "Java",
+                "MySQL"
+            ],
+            "link": "#"
+        }
+    ],
+    "contact": {
+        "email": "aqimanfauzi@gmail.com",
+        "socials": [
+            {
+                "name": "LinkedIn",
+                "icon": "fab fa-linkedin",
+                "link": "https://linkedin.com/in/aqiman"
+            },
+            {
+                "name": "GitHub",
+                "icon": "fab fa-github",
+                "link": "https://github.com/aqimxn"
+            },
+            {
+                "name": "Instagram",
+                "icon": "fab fa-instagram",
+                "link": "https://instagram.com/aqimann"
+            }
+        ]
+    }
+}
