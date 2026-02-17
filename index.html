@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="icon" href="assets/img/portfolio-icon.png">
-    <title>My Portfolio</title>
+    <title>Portfolio</title>
 </head>
 
 <body class="bg-black text-white" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
@@ -16,7 +16,7 @@
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent transition-all">
         <div class="container-fluid px-4 px-lg-5">
-            <a class="navbar-brand fw-bold text-theme" href="#">Aqiman</a>
+            <a class="navbar-brand fw-bold text-theme" href="">Aqiman</a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa-solid fa-bars-staggered text-theme fs-3"></span>
@@ -70,6 +70,17 @@
         <section id="activities" class="py-5 bg-black">
             <div class="container">
 
+                <!-- Category Filter -->
+                <div class="d-flex justify-content-end mb-4 px-4">
+                    <select class="form-select w-auto bg-black text-white border-theme" id="activity-filter">
+                        <option value="All">All</option>
+                        <option value="Experience">Experience</option>
+                        <option value="Matriculation">Matriculation</option>
+                        <option value="Bachelor Degree">Bachelor Degree</option>
+                        <option value="Internship">Internship</option>
+                    </select>
+                </div>
+
                 <!-- Carousel Container -->
                 <div class="activities-carousel-wrapper position-relative px-4">
                     <button
@@ -96,7 +107,7 @@
         <section id="skills" class="py-5 bg-dark-theme">
             <div class="container py-5">
                 <h2 class="display-4 fw-bold text-center mb-5 text-theme">Skills</h2>
-                <div class="row g-5" id="skills-container">
+                <div class="row justify-content-center g-4" id="skills-container">
                     <!-- Skills injected -->
                 </div>
             </div>

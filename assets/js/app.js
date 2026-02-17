@@ -3,24 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Fetch Data from JSON
+// Global variables
+let allActivities = [];
+let autoScrollInterval;
+
 async function fetchData() {
     try {
         const response = await fetch('assets/data.json');
         const data = await response.json();
 
+        allActivities = data.activities_gallery; // Store for filtering
+
         renderHeader(data.header);
         renderHero(data.hero);
         renderAbout(data.about);
         renderEducation(data.education);
-        renderActivities(data.activities_gallery);
+        renderActivities(allActivities); // Initial render
         renderSkills(data.skills);
         renderProjects(data.projects);
         renderContact(data.contact);
 
         // Init animations after rendering
         initScrollAnimation();
-        initTypeLoop(data.hero); // Start type loop with data
+        initTypeLoop(data.hero);
         initNavbarEffect();
+        initCategoryFilter(); // Setup filter listener
 
     } catch (error) {
         console.error('Error loading data:', error);
@@ -80,14 +87,14 @@ function renderEducation(education) {
         return `
         <div class="col-md-4 fade-up" style="transition-delay: ${index * 0.1}s;">
             <div class="card card-custom h-100 p-4 text-center rounded-4 border-theme">
-                <div class="mb-3" style="height: 80px; display: flex; align-items: center; justify-content: center;">
-                    <img src="${edu.logo}" alt="${edu.institution}" style="max-height: 60px; padding: 10px;">
+                <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
+                    <img src="${edu.logo}" alt="${edu.institution}" style="max-height: 60px; ${edu.category === 'Matriculation' ? '' : 'padding: 10px;'}">
                 </div>
                 <h4 class="text-white fw-bold">${edu.category}</h4>
                 <h5 class="fw-bold text-white my-2">${edu.institution}</h5>
                 <p class="small text-white mb-1">${edu.location} | ${edu.years}</p>
                 <p class="fw-medium text-white mb-2">${edu.course}</p>
-                ${edu.cgpa ? `<p class="small fw-bold text-success mb-0">CGPA: ${edu.cgpa}</p>` : ''}
+                ${edu.cgpa === "PASS" ? `<p class="small fw-bold text-success mb-0">Result: PASS</p>` : (edu.cgpa ? `<p class="small fw-bold text-success mb-0">CGPA: ${edu.cgpa}</p>` : '')}
                 ${activitiesHtml}
             </div>
         </div>
@@ -96,7 +103,10 @@ function renderEducation(education) {
 
 function renderActivities(activities) {
     const container = document.getElementById('activities-container');
-    if (!container) return; // Guard clause if section missing
+    if (!container) return;
+
+    // Clear existing interval if re-rendering
+    if (autoScrollInterval) clearInterval(autoScrollInterval);
 
     container.innerHTML = activities.map(act => `
         <div class="activity-card">
@@ -112,27 +122,43 @@ function renderActivities(activities) {
         </div>
     `).join('');
 
-    initActivitiesCarousel();
+    // Re-initialize carousel logic (only start scrolling, listeners attached once elsewhere if possible, but here we might need to be careful)
+    // Actually, since we replace innerHTML, the container is same.
+    // We should separate listener attachment.
+    updateCarouselState();
 }
 
-function initActivitiesCarousel() {
+function initCategoryFilter() {
+    const filter = document.getElementById('activity-filter');
+    if (!filter) return;
+
+    filter.addEventListener('change', (e) => {
+        const category = e.target.value;
+        const filtered = category === 'All'
+            ? allActivities
+            : allActivities.filter(a => a.category === category);
+        renderActivities(filtered);
+    });
+
+    // Initialize carousel listeners once
+    initCarouselListeners();
+}
+
+function initCarouselListeners() {
     const container = document.getElementById('activities-container');
     const prevBtn = document.getElementById('prev-activity');
     const nextBtn = document.getElementById('next-activity');
 
     if (!container || !prevBtn || !nextBtn) return;
 
-    let autoScrollInterval;
-
     const getScrollAmount = () => {
         const card = container.querySelector('.activity-card');
-        return card ? card.offsetWidth + 24 : 0; // width + gap-4 (24px)
+        return card ? card.offsetWidth + 24 : 0;
     };
 
     const scrollLeft = () => container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
     const scrollRight = () => {
         const scrollAmount = getScrollAmount();
-        // Check if we are near the end to loop back or just scroll
         if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
             container.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -140,7 +166,6 @@ function initActivitiesCarousel() {
         }
     };
 
-    // Event Listeners for Buttons
     prevBtn.addEventListener('click', () => {
         stopAutoScroll();
         scrollLeft();
@@ -153,21 +178,36 @@ function initActivitiesCarousel() {
         startAutoScroll();
     });
 
-    // Auto Scroll Logic
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(scrollRight, 5000);
-    }
-
-    function stopAutoScroll() {
-        clearInterval(autoScrollInterval);
-    }
-
-    // Pause on Hover
     container.addEventListener('mouseenter', stopAutoScroll);
     container.addEventListener('mouseleave', startAutoScroll);
+}
 
-    // Initial Start
+function updateCarouselState() {
     startAutoScroll();
+}
+
+function startAutoScroll() {
+    if (autoScrollInterval) clearInterval(autoScrollInterval);
+    const container = document.getElementById('activities-container');
+    if (!container) return;
+
+    // Only scroll if there is content to scroll
+    if (container.scrollWidth > container.clientWidth) {
+        autoScrollInterval = setInterval(() => {
+            const card = container.querySelector('.activity-card');
+            const scrollAmount = card ? card.offsetWidth + 24 : 0;
+
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+                container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }, 5000);
+    }
+}
+
+function stopAutoScroll() {
+    if (autoScrollInterval) clearInterval(autoScrollInterval);
 }
 
 // Helper to get dot color class
@@ -183,10 +223,10 @@ function renderSkills(skills) {
     // Technical Skills
     const techHtml = `
         <div class="col-lg-6 mb-4">
-            <div class="h-100 p-4 border border-theme rounded-4">
+            <div class="h-100 p-4 border border-theme rounded-4 m-0">
                 <div class="d-flex justify-content-between align-items-center pb-2 mb-4">
                     <h3 class="text-theme mb-0 fst-italic">Technical Skills</h3>
-                    <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" title="Green: Proficient, Yellow: Intermediate, Red: Beginner"></i>
+                    <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" title="🟢 Proficient | 🟡 Intermediate | 🔴 Beginner"></i>
                 </div>
                 <div class="row row-cols-3 row-cols-sm-3 row-cols-md-4 g-3 justify-content-center">
                     ${skills.technical.map(skill => `
@@ -217,13 +257,14 @@ function renderSkills(skills) {
                         <div class="col-md-6">
                             <div class="card card-custom p-3 h-100 border-0 bg-transparent">
                                 <div class="d-flex align-items-center mb-2">
-                                    <i class="${cert.icon_class} text-theme fs-4 me-3"></i>
+                                    <img src="${cert.icon}" class="skill-icon m-2" alt="${cert.name}">
                                     <div>
                                         <h6 class="fw-bold mb-0 text-white">${cert.name}</h6>
-                                        <small class="text-muted">${cert.issuer} - ${cert.year}</small>
+                                        <small class="text-white">${cert.issuer} - ${cert.year}</small>
                                     </div>
                                 </div>
-                                <p class="small mb-0 text-white-50">${cert.description}</p>
+                                <p class="small mb-2 text-white-50">${cert.description}</p>
+                                <a href="${cert.link}" target="_blank" class="small text-theme text-decoration-none fw-bold">View Cert <i class="fas fa-arrow-right ms-1"></i></a>
                             </div>
                         </div>
                     `).join('')}
@@ -232,24 +273,37 @@ function renderSkills(skills) {
         </div>
     `;
 
-    // Soft Skills
+    // Soft Skills (Split rows)
+    const softSkillsPrimary = skills.soft_skills.slice(0, 2); // First 2 (Malay, English)
+    const softSkillsSecondary = skills.soft_skills.slice(2); // Rest
+
     const softHtml = `
          <div class="col-12">
             <div class="h-100 p-4 border border-theme rounded-4">
                 <div class="d-flex justify-content-between align-items-center pb-2 mb-4">
                      <h3 class="text-theme mb-0 fst-italic">Soft Skills</h3>
-                     <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" title="Green: Proficient, Yellow: Intermediate, Red: Beginner"></i>
+                     <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" title="🟢 Proficient | 🟡 Intermediate | 🔴 Beginner"></i>
                 </div>
-                <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    ${skills.soft_skills.map(skill => `
-                        <span class="badge border border-theme text-theme bg-transparent p-2 rounded-pill fs-6" data-bs-toggle="tooltip" title="Soft Skill">${skill}</span>
+                <!-- Row 1: Languages -->
+                <div class="d-flex flex-wrap gap-2 justify-content-start mb-2">
+                    ${softSkillsPrimary.map(skill => `
+                        <span class="badge border border-white text-white bg-transparent p-2 rounded-pill fs-6 d-flex align-items-center gap-2" data-bs-toggle="tooltip" title="Language">
+                            ${skill}
+                            <span class="dot-indicator bg-success"></span>
+                        </span>
+                    `).join('')}
+                </div>
+                <!-- Row 2: Others -->
+                <div class="d-flex flex-wrap gap-2 justify-content-start">
+                    ${softSkillsSecondary.map(skill => `
+                        <span class="badge border border-white text-white bg-transparent p-2 rounded-pill fs-6" data-bs-toggle="tooltip" title="Soft Skill">${skill}</span>
                     `).join('')}
                 </div>
             </div>
         </div>
     `;
 
-    container.innerHTML = `<div class="row">${techHtml}${certHtml}${softHtml}</div>`;
+    container.innerHTML = techHtml + certHtml + softHtml;
 
     // Initialize tooltips after rendering
     initTooltips();
@@ -265,7 +319,7 @@ function renderProjects(projects) {
                 </div>
                 <div class="card-body px-4 pt-0 pb-4">
                     <h4 class="fw-bold text-theme">${proj.title}</h4>
-                    <p class="small mb-3">${proj.description}</p>
+                    <p class="small mb-3 text-white">${proj.description}</p>
                     <div class="mb-3">
                         ${proj.tech_stack.map(tech => `<span class="badge bg-secondary me-1">${tech}</span>`).join('')}
                     </div>
@@ -410,7 +464,3 @@ function getProficiencyColor(level) {
     if (level === 'Intermediate') return '#FFD43B';
     return '#dd5014';
 }
-
-
-
-

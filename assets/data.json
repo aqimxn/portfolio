@@ -34,13 +34,13 @@
     "about": {
         "text_left": "Hi, I'm Muhammad Aqiman👋<br>a compsci fresh-grad who passionate about building things with code and automation.",
         "text_right": "I'm curious by default, always learning new tools, and pushing myself by building projects that actually get used.",
-        "image": "assets/img/my-picture.png"
+        "image": "assets/img/about-me/my-picture.png"
     },
     "education": [
         {
             "category": "Matriculation",
             "institution": "Johore Matriculation College",
-            "logo": "assets/img/kmj-logo.png",
+            "logo": "assets/img/education/kmj-logo.png",
             "location": "Tangkak, Johor",
             "course": "Foundation in Accounting",
             "years": "Mar 2021 - Feb 2022",
@@ -57,27 +57,35 @@
         {
             "category": "Bachelor Degree",
             "institution": "Universiti Teknologi Mara",
-            "logo": "assets/img/uitm-logo.png",
+            "logo": "assets/img/education/uitm-logo.png",
             "location": "Jasin, Melaka",
             "course": "Bachelor of Computer Science (Hons.)",
             "years": "Aug 2022 - Dec 2025",
             "cgpa": "3.59",
             "activities": [
-                "ANC Recipient (Vice Chancellor Award)",
-                "Project Lead for 'Code for Good' Hackathon",
-                "Secretary of Computer Science Society",
-                "Mentor for Junior Web Development Workshop"
+                "SULAM Programme - Led and facilitated a community-based learning workshop focused on Cyberbullying Awareness",
+                "Served as a member of Special Task Unit in Computer Science Society",
+                "Assistant Programme Leader for Flutter Workshop",
+                "Served as Emcee for a university-level Laravel Workshop",
+                "Participated 2 times in Data Hackathon under Data Science Assosication Club",
+                "Participated in UiTM FSKM E-Sports Championship (PUBG Mobile)"
             ]
         },
         {
             "category": "Internship",
             "institution": "Awanpro Solutions Sdn Bhd",
-            "logo": "assets/img/awanpro-logo.png",
+            "logo": "assets/img/education/awanpro-logo.png",
             "location": "Cyberjaya, Selangor",
             "course": "Software Developer Intern",
             "years": "Sept 2025 - Mar 2026",
-            "details": "Developed full-stack web applications using Laravel. Collaborated with senior developers to optimize database queries. Implemented RESTful APIs for mobile app integration. Participated in daily agile scrums and code reviews.",
-            "activities": []
+            "cgpa": "PASS",
+            "activities": [
+                "Developed a Graphical User Interface (GUI) using Tkinter",
+                "Developed Billing System using Laravel and PostreSQL",
+                "Collaborated with senior software engineer to manage ISO Documentation",
+                "Participated in sports activity, sponsored by Cradle Fund Sdn Bhd",
+                "Joined a monthly booth opening at MBSA Shah Alam"
+            ]
         }
     ],
     "activities_gallery": [
@@ -111,109 +119,167 @@
         "technical": [
             {
                 "name": "Laravel",
-                "icon": "assets/img/laravel-icon.svg",
+                "icon": "assets/img/technical-skills/laravel-icon.svg",
                 "level": "Proficient"
             },
             {
                 "name": "Flask",
-                "icon": "assets/img/flask-icon.png",
+                "icon": "assets/img/technical-skills/flask-icon.png",
                 "level": "Proficient"
             },
             {
                 "name": "Python",
-                "icon": "assets/img/python-icon.svg",
+                "icon": "assets/img/technical-skills/python-icon.svg",
                 "level": "Proficient"
             },
             {
                 "name": "Machine Learning",
-                "icon": "assets/img/machine-learning-icon.png",
+                "icon": "assets/img/technical-skills/machine-learning-icon.png",
                 "level": "Intermediate"
             },
             {
                 "name": "C++",
-                "icon": "assets/img/c++-icon.svg",
+                "icon": "assets/img/technical-skills/c++-icon.svg",
                 "level": "Intermediate"
             },
             {
                 "name": "JavaScript",
-                "icon": "assets/img/javascript-icon.svg",
+                "icon": "assets/img/technical-skills/javascript-icon.svg",
                 "level": "Beginner"
             },
             {
                 "name": "PostgreSQL",
-                "icon": "assets/img/postgresql-icon.svg",
+                "icon": "assets/img/technical-skills/postgresql-icon.svg",
                 "level": "Proficient"
             },
             {
                 "name": "MySQL",
-                "icon": "assets/img/mysql-icon.svg",
+                "icon": "assets/img/technical-skills/mysql-icon.svg",
                 "level": "Proficient"
             },
             {
                 "name": "MongoDB",
-                "icon": "assets/img/mongodb-icon.svg",
+                "icon": "assets/img/technical-skills/mongodb-icon.svg",
                 "level": "Beginner"
             },
             {
                 "name": "SQLite",
-                "icon": "assets/img/sqlite-icon.svg",
+                "icon": "assets/img/technical-skills/sqlite-icon.svg",
                 "level": "Proficient"
             },
             {
                 "name": "Git",
-                "icon": "assets/img/git-icon.svg",
+                "icon": "assets/img/technical-skills/git-icon.svg",
                 "level": "Proficient"
             },
             {
                 "name": "Postman",
-                "icon": "assets/img/postman-icon.svg",
+                "icon": "assets/img/technical-skills/postman-icon.svg",
                 "level": "Beginner"
             },
             {
                 "name": "PowerBI",
-                "icon": "assets/img/powerbi-icon.svg",
+                "icon": "assets/img/technical-skills/powerbi-icon.svg",
                 "level": "Intermediate"
             },
             {
                 "name": "Tableau",
-                "icon": "assets/img/tableau-icon.svg",
+                "icon": "assets/img/technical-skills/tableau-icon.svg",
                 "level": "Beginner"
             },
             {
                 "name": "Word",
-                "icon": "assets/img/word-icon.svg",
+                "icon": "assets/img/technical-skills/word-icon.svg",
                 "level": "Proficient"
             },
             {
                 "name": "Excel",
-                "icon": "assets/img/excel-icon.svg",
+                "icon": "assets/img/technical-skills/excel-icon.svg",
                 "level": "Intermediate"
             },
             {
                 "name": "Powerpoint",
-                "icon": "assets/img/powerpoint-icon.svg",
+                "icon": "assets/img/technical-skills/powerpoint-icon.svg",
                 "level": "Intermediate"
             },
             {
                 "name": "Canva",
-                "icon": "assets/img/canva-icon.svg",
+                "icon": "assets/img/technical-skills/canva-icon.svg",
                 "level": "Proficient"
             }
         ],
         "certifications": [
             {
-                "name": "Full Stack Web Development",
-                "issuer": "Udemy",
-                "year": "2024",
-                "icon_class": "fa-solid fa-certificate",
-                "description": "Comprehensive course covering React, Node.js, and SQL."
+                "name": "Technology Entrepreneurship Case Study Competition",
+                "issuer": "TECSC",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/tecsc-icon.jpg",
+                "description": "Created a unique and innovative business idea and presented it to a panel of judges",
+                "link": "#"
             },
             {
-                "name": "AWS Cloud Practitioner",
-                "issuer": "Amazon Web Services",
-                "year": "2023",
-                "icon_class": "fa-brands fa-aws",
-                "description": "Foundational knowledge of cloud concepts and security."
+                "name": "Microsoft AI for All",
+                "issuer": "Microsoft",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/microsoft-icon.png",
+                "description": "Learned about AI concepts and its applications",
+                "link": "https://pepper-s-site-1c7b.thinkific.com/certificates/udsahrkkl4"
+            },
+            {
+                "name": "Python Programming Fundamentals",
+                "issuer": "Malaysia Digital Economy Corporation (MDEC)",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/mdec-icon.png",
+                "description": "Learned about Python programming concepts",
+                "link": "#"
+            },
+            {
+                "name": "Data Scientist in Python",
+                "issuer": "DataCamp",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/datacamp-icon.jpg",
+                "description": "Learned about data science concepts in intermediate level",
+                "link": "https://www.datacamp.com/completed/statement-of-accomplishment/track/bd7cd10946fd57f83fc0a1c24a11665264184475"
+            },
+            {
+                "name": "Associate Data Scientist in Python",
+                "issuer": "DataCamp",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/datacamp-icon.jpg",
+                "description": "Learned about data science concepts in advanced level",
+                "link": "https://www.datacamp.com/completed/statement-of-accomplishment/track/6fdb564919394b8963eb5c0cc6e47fc7ff34968f"
+            },
+            {
+                "name": "Data Analyst with Python",
+                "issuer": "DataCamp",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/datacamp-icon.jpg",
+                "description": "Learned about data analysis concepts and its applications",
+                "link": "https://www.datacamp.com/completed/statement-of-accomplishment/track/ba22a509aed51202e47fac84f4ec80cb544be70a"
+            },
+            {
+                "name": "Social Engineering & Phishing",
+                "issuer": "0day Academy",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/0day-academy-icon.jpg",
+                "description": "Learned about social engineering and phishing in the Age of AI",
+                "link": "#"
+            },
+            {
+                "name": "Python Discovery Bootcamp",
+                "issuer": "42 Iskandar Puteri",
+                "year": "2025",
+                "icon": "assets/img/certifications/issuer/42iskandar-puteri-icon.png",
+                "description": "Learned about Python programming concepts from beginner to advance in a week",
+                "link": "#"
+            },
+            {
+                "name": "Top Coders",
+                "issuer": "Data Science Association",
+                "year": "2024",
+                "icon": "assets/img/certifications/issuer/dsa-icon.jpg",
+                "description": "Participated in a coding competition using Python language",
+                "link": "#"
             }
         ],
         "soft_skills": [
@@ -231,7 +297,7 @@
     "projects": [
         {
             "title": "SaaS Barbershop",
-            "image": "assets/img/saas-barbershop.png",
+            "image": "assets/img/projects/saas-barbershop.png",
             "description": "A responsive SaaS Barbershop website built with Laravel, PostgeSQL, and Bootstrap.",
             "tech_stack": [
                 "Laravel",
@@ -242,7 +308,7 @@
         },
         {
             "title": "Billing System",
-            "image": "assets/img/billing-system.png",
+            "image": "assets/img/projects/billing-system.png",
             "description": "A billing system application with payment gateway integration.",
             "tech_stack": [
                 "Laravel",
@@ -252,7 +318,7 @@
         },
         {
             "title": "GUI Folder Management",
-            "image": "assets/img/gui-folder-management.png",
+            "image": "assets/img/projects/gui-folder-management.png",
             "description": "A GUI folder management application with file organization and management features.",
             "tech_stack": [
                 "Python",
@@ -262,7 +328,7 @@
         },
         {
             "title": "Skillytics",
-            "image": "assets/img/skillytics.png",
+            "image": "assets/img/projects/skillytics.png",
             "description": "A skill-based learning platform with personalized learning paths and progress tracking.",
             "tech_stack": [
                 "Flask",
@@ -272,7 +338,7 @@
         },
         {
             "title": "Reward Management System",
-            "image": "assets/img/reward-management-system.png",
+            "image": "assets/img/projects/reward-management-system.png",
             "description": "A reward management system application with reward tracking and management features.",
             "tech_stack": [
                 "Java",
@@ -282,7 +348,7 @@
         },
         {
             "title": "ATM Management System",
-            "image": "assets/img/atm-management-system.png",
+            "image": "assets/img/projects/atm-management-system.png",
             "description": "An ATM management system application with ATM card management features.",
             "tech_stack": [
                 "Java",
