@@ -29,7 +29,7 @@
         "title": "My",
         "type_words": "Portfolio,Identity,Style",
         "type_colors": "#d4e499,#acb882,#bfc7a1,#d9dfc3",
-        "subtitle": "Aqiman | Software Developer Intern"
+        "subtitle": "Aqiman | Based in Cyberjaya"
     },
     "about": {
         "text_left": "Hi, I'm Muhammad Aqiman👋<br>a compsci fresh-grad who passionate about building things with code and automation.",
@@ -46,12 +46,11 @@
             "years": "Mar 2021 - Feb 2022",
             "cgpa": "4.00",
             "activities": [
-                "Top 2 on Mathematics Examination across all practicums.",
-                "Peer Assisted Learning Leader (PAL) Leader in Mathematics",
-                "President of Accommodation College Committee",
-                "Active member of the Debate Club",
-                "Participant in National Math Olympiad",
-                "Volunteer for Flood Relief Program"
+                "Ranked Top 2 in Mathematics Examination across all practicums",
+                "Participated in an International-Level Virtual Orienteering Competition",
+                "Participated in a College-Level Boria Competition and Managed Live Audio Operations as part of the Technical Committee",
+                "Competitor in an Inter-Practicum Business Video Competition on TikTok",
+                "Served as a Competition Systems Committee Member in the Cultural Club and Association"
             ]
         },
         {
@@ -63,12 +62,12 @@
             "years": "Aug 2022 - Dec 2025",
             "cgpa": "3.59",
             "activities": [
-                "SULAM Programme - Led and facilitated a community-based learning workshop focused on Cyberbullying Awareness",
-                "Served as a member of Special Task Unit in Computer Science Society",
-                "Assistant Programme Leader for Flutter Workshop",
-                "Served as Emcee for a university-level Laravel Workshop",
-                "Participated 2 times in Data Hackathon under Data Science Assosication Club",
-                "Participated in UiTM FSKM E-Sports Championship (PUBG Mobile)"
+                "Led a Cyberbullying Awareness workshop under the SULAM Programme",
+                "Member of the Special Task Unit, Computer Science Society",
+                "Assistant Programme Leader for a Flutter Workshop",
+                "Emcee for a university-level Laravel Workshop",
+                "Participated twice in Data Hackathons under the Data Science Association",
+                "Competitor in UiTM FSKM E-Sports Championship (PUBG Mobile)"
             ]
         },
         {
@@ -78,41 +77,112 @@
             "location": "Cyberjaya, Selangor",
             "course": "Software Developer Intern",
             "years": "Sept 2025 - Mar 2026",
-            "cgpa": "PASS",
+            "cgpa": "-",
             "activities": [
-                "Developed a Graphical User Interface (GUI) using Tkinter",
-                "Developed Billing System using Laravel and PostreSQL",
-                "Collaborated with senior software engineer to manage ISO Documentation",
-                "Participated in sports activity, sponsored by Cradle Fund Sdn Bhd",
-                "Joined a monthly booth opening at MBSA Shah Alam"
+                "Built a desktop GUI application using Python (Tkinter)",
+                "Developed a Billing System using Laravel and PostgreSQL",
+                "Worked with a senior software engineer to manage ISO documentation",
+                "Participated in a sports program sponsored by Cradle Fund Sdn Bhd",
+                "Assisted in monthly booth operations at MBSA Shah Alam"
             ]
         }
     ],
     "activities_gallery": [
         {
-            "category": "Bachelor Degree",
-            "image": "assets/img/project1.png",
-            "description": "Led the 'Code for Good' hackathon team to victory, developing a solution for sustainable waste management."
-        },
-        {
-            "category": "Bachelor Degree",
-            "image": "assets/img/project2.png",
-            "description": "Organized a university-wide coding workshop for over 200 participants as the Secretary of CS Society."
-        },
-        {
-            "category": "Bachelor Degree",
-            "image": "assets/img/project3.png",
-            "description": "Represented the university in the National Math Olympiad, securing a top 10 finish."
+            "category": "Internship",
+            "date": "Nov 2025",
+            "image": "assets/img/activities-gallery/internship/cradle-sports-event.jpg",
+            "description": "Joined a sports program during my internship at Cradle Fund Sdn Bhd where we strengthened teamwork and built stronger connections within the company."
         },
         {
             "category": "Internship",
-            "image": "assets/img/project4.png",
-            "description": "Collaborated with the design team to implement a new responsive UI for the company's main product."
+            "date": "Oct 2025",
+            "image": "assets/img/activities-gallery/internship/mbsa-event.jpg",
+            "description": "Took part in a company event held at MBSA Shah Alam as part of my internship exposure to corporate engagement activities."
         },
         {
-            "category": "Internship",
-            "image": "assets/img/project5.png",
-            "description": "Presented the final internship project to the stakeholders and received commendation for technical depth."
+            "category": "Bachelor Degree",
+            "date": "June 2025",
+            "image": "assets/img/activities-gallery/degree/sulam.jpg",
+            "description": "Led a Cyberbullying Awareness workshop under the SULAM Programme and guided students in discussions about online safety and responsible digital behavior."
+        },
+        {
+            "category": "Bachelor Degree",
+            "date": "June 2024",
+            "image": "assets/img/activities-gallery/degree/classmates.jpg",
+            "description": "A memorable moment with my classmates at UiTM Kampus Jasin throughout my Bachelor’s Degree journey."
+        },
+        {
+            "category": "Bachelor Degree",
+            "date": "May 2024",
+            "image": "assets/img/activities-gallery/degree/prosis.jpg",
+            "description": "Competed in the Prosis Sports Event and achieved 2nd place in the ceper category."
+        },
+        {
+            "category": "Bachelor Degree",
+            "date": "Dec 2023",
+            "image": "assets/img/activities-gallery/degree/pubg.png",
+            "description": "Represented my faculty in the UiTM FSKM E-Sports Championship for PUBG Mobile and competed at university level."
+        },
+        {
+            "category": "Bachelor Degree",
+            "date": "June 2023",
+            "image": "assets/img/activities-gallery/degree/deans-list.jpg",
+            "description": "Received the Dean’s List Award in recognition of strong academic performance."
+        },
+        {
+            "category": "Bachelor Degree",
+            "date": "Dec 2022",
+            "image": "assets/img/activities-gallery/degree/color-run.jpg",
+            "description": "Participated in a campus Color Run event that promoted fitness and active student engagement."
+        },
+        {
+            "category": "Bachelor Degree",
+            "date": "Dec 2022",
+            "image": "assets/img/activities-gallery/degree/perkad.jpg",
+            "description": "Took part in kawad kaki under PERKAD and secured 2nd place through discipline and coordinated teamwork."
+        },
+        {
+            "category": "Bachelor Degree",
+            "date": "Nov 2022",
+            "image": "assets/img/activities-gallery/degree/mosque.jpg",
+            "description": "Attended usrah sessions at Pusat Islam during Ramadhan focusing on spiritual growth and reflection."
+        },
+        {
+            "category": "Matriculation",
+            "date": "2021",
+            "image": "assets/img/activities-gallery/matriculation/classmates.jpg",
+            "description": "Moments with my classmates at Johor Matriculation College during my foundation studies."
+        },
+        {
+            "category": "Matriculation",
+            "date": "2021",
+            "image": "assets/img/activities-gallery/matriculation/boria.jpg",
+            "description": "Practiced and performed Boria for a matriculation competition while contributing to team coordination and stage performance."
+        },
+        {
+            "category": "Other",
+            "date": "Feb 2026",
+            "image": "assets/img/activities-gallery/other/klcfm.jpg",
+            "description": "Visited KL Car Free Morning and joined public exercise activities to maintain a healthy and active lifestyle."
+        },
+        {
+            "category": "Other",
+            "date": "Mar 2025",
+            "image": "assets/img/activities-gallery/other/bootcamp.jpg",
+            "description": "Completed a 7 day intensive bootcamp focused on Python programming to strengthen coding fundamentals and problem solving skills."
+        },
+        {
+            "category": "Other",
+            "date": "Jan 2025",
+            "image": "assets/img/activities-gallery/other/asahan.jpg",
+            "description": "Enjoyed a recreational trip to Asahan with friends and strengthened friendships outside academic life."
+        },
+        {
+            "category": "Other",
+            "date": "2021",
+            "image": "assets/img/activities-gallery/other/metwo.jpg",
+            "description": "Worked as a Sales Assistant at MeTwo Sdn Bhd assisting customers and managing daily sales operations."
         }
     ],
     "skills": {
@@ -145,7 +215,7 @@
             {
                 "name": "JavaScript",
                 "icon": "assets/img/technical-skills/javascript-icon.svg",
-                "level": "Beginner"
+                "level": "Intermediate"
             },
             {
                 "name": "PostgreSQL",
@@ -215,7 +285,8 @@
                 "year": "2025",
                 "icon": "assets/img/certifications/issuer/tecsc-icon.jpg",
                 "description": "Created a unique and innovative business idea and presented it to a panel of judges",
-                "link": "#"
+                "link": "#",
+                "image": "assets/img/certifications/cert/tecsc-cert.jpg"
             },
             {
                 "name": "Microsoft AI for All",
@@ -231,7 +302,8 @@
                 "year": "2025",
                 "icon": "assets/img/certifications/issuer/mdec-icon.png",
                 "description": "Learned about Python programming concepts",
-                "link": "#"
+                "link": "#",
+                "image": "assets/img/certifications/cert/python-fundamentals-cert.jpg"
             },
             {
                 "name": "Data Scientist in Python",
@@ -263,7 +335,8 @@
                 "year": "2025",
                 "icon": "assets/img/certifications/issuer/0day-academy-icon.jpg",
                 "description": "Learned about social engineering and phishing in the Age of AI",
-                "link": "#"
+                "link": "#",
+                "image": "assets/img/certifications/cert/social-engineering-cert.jpg"
             },
             {
                 "name": "Python Discovery Bootcamp",
@@ -271,7 +344,8 @@
                 "year": "2025",
                 "icon": "assets/img/certifications/issuer/42iskandar-puteri-icon.png",
                 "description": "Learned about Python programming concepts from beginner to advance in a week",
-                "link": "#"
+                "link": "#",
+                "image": "assets/img/certifications/cert/python-discovery-bootcamp-cert.jpg"
             },
             {
                 "name": "Top Coders",
@@ -279,7 +353,8 @@
                 "year": "2024",
                 "icon": "assets/img/certifications/issuer/dsa-icon.jpg",
                 "description": "Participated in a coding competition using Python language",
-                "link": "#"
+                "link": "#",
+                "image": "assets/img/certifications/cert/top-coders-cert.jpg"
             }
         ],
         "soft_skills": [

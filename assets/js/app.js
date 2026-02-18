@@ -39,6 +39,18 @@ function initTooltips() {
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
 
+// Global function for Cert Modal
+window.showCertModal = function (imageSrc) {
+    const modalImg = document.getElementById('modalImage');
+    const downloadLink = document.getElementById('downloadLink');
+    if (modalImg && downloadLink) {
+        modalImg.src = imageSrc;
+        downloadLink.href = imageSrc;
+        const myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        myModal.show();
+    }
+};
+
 // Render Functions
 function renderHeader(links) {
     const navList = document.getElementById('nav-list');
@@ -55,13 +67,13 @@ function renderHero(hero) {
 function renderAbout(about) {
     const container = document.getElementById('about-content');
     container.innerHTML = `
-        <div class="col-lg-4 text-lg-end slide-left">
+        <div class="col-lg-4 text-center text-lg-end slide-left">
             <p class="fs-5 fst-italic">${about.text_left}</p>
         </div>
         <div class="col-lg-4 text-center slide-up" style="transition-delay: 0.2s;">
             <img src="${about.image}" class="img-fluid rounded-circle border-theme" style="max-width: 250px;">
         </div>
-        <div class="col-lg-4 text-lg-start slide-right" style="transition-delay: 0.4s;">
+        <div class="col-lg-4 text-center text-lg-start slide-right" style="transition-delay: 0.4s;">
             <p class="fs-5 fst-italic">${about.text_right}</p>
         </div>
     `;
@@ -94,7 +106,7 @@ function renderEducation(education) {
                 <h5 class="fw-bold text-white my-2">${edu.institution}</h5>
                 <p class="small text-white mb-1">${edu.location} | ${edu.years}</p>
                 <p class="fw-medium text-white mb-2">${edu.course}</p>
-                ${edu.cgpa === "PASS" ? `<p class="small fw-bold text-success mb-0">Result: PASS</p>` : (edu.cgpa ? `<p class="small fw-bold text-success mb-0">CGPA: ${edu.cgpa}</p>` : '')}
+                ${edu.cgpa === "-" ? `<p class="small fw-bold text-success mb-0">Result: -</p>` : (edu.cgpa ? `<p class="small fw-bold text-success mb-0">CGPA: ${edu.cgpa}</p>` : '')}
                 ${activitiesHtml}
             </div>
         </div>
@@ -113,10 +125,10 @@ function renderActivities(activities) {
             <div class="card card-custom h-100 overflow-hidden rounded-4 border-theme">
                 <div class="position-relative" style="height: 200px;">
                     <img src="${act.image}" class="w-100 h-100 object-fit-cover" alt="Activity">
-                    <span class="position-absolute top-0 end-0 m-3 badge bg-black border border-theme text-theme">${act.category}</span>
+                    <span class="position-absolute top-0 end-0 m-3 badge bg-black border border-theme text-theme">${act.category} | ${act.date}</span>
                 </div>
                 <div class="card-body p-4">
-                    <p class="card-text small text-white">${act.description}</p>
+                    <p class="card-text small text-white text-center">${act.description}</p>
                 </div>
             </div>
         </div>
@@ -226,7 +238,7 @@ function renderSkills(skills) {
             <div class="h-100 p-4 border border-theme rounded-4 m-0">
                 <div class="d-flex justify-content-between align-items-center pb-2 mb-4">
                     <h3 class="text-theme mb-0 fst-italic">Technical Skills</h3>
-                    <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" title="🟢 Proficient | 🟡 Intermediate | 🔴 Beginner"></i>
+                    <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" data-bs-html="true" title="<span class='dot-indicator bg-success'></span> Proficient <br> <span class='dot-indicator bg-warning'></span> Intermediate <br> <span class='dot-indicator bg-danger'></span> Beginner"></i>
                 </div>
                 <div class="row row-cols-3 row-cols-sm-3 row-cols-md-4 g-3 justify-content-center">
                     ${skills.technical.map(skill => `
@@ -253,7 +265,18 @@ function renderSkills(skills) {
                     <h3 class="text-theme mb-0 fst-italic">Certifications</h3>
                 </div>
                 <div class="row g-3">
-                    ${skills.certifications.map(cert => `
+                    ${skills.certifications.map(cert => {
+                        let actionBtn;
+                        // Logic: If link is valid and external, show link. Otherwise (or if explicit #), show modal.
+                        // Assuming 'assets/img' might be the link if they want to view the image directly, but user said 'cert who dont have links'.
+                        // We'll check if link is present and not empty/hash.
+                        if (cert.link && cert.link !== '#' && cert.link.trim() !== '') {
+                            actionBtn = `<a href="${cert.link}" target="_blank" class="small text-theme text-decoration-none fw-bold">Show Credential <i class="fas fa-arrow-right ms-1"></i></a>`;
+                        } else {
+                            actionBtn = `<button class="btn btn-sm btn-link small text-theme text-decoration-none fw-bold p-0 border-0" onclick="showCertModal('${cert.image}')">View Cert <i class="fas fa-eye ms-1"></i></button>`;
+                        }
+
+                        return `
                         <div class="col-md-6">
                             <div class="card card-custom p-3 h-100 border-0 bg-transparent">
                                 <div class="d-flex align-items-center mb-2">
@@ -264,10 +287,10 @@ function renderSkills(skills) {
                                     </div>
                                 </div>
                                 <p class="small mb-2 text-white-50">${cert.description}</p>
-                                <a href="${cert.link}" target="_blank" class="small text-theme text-decoration-none fw-bold">View Cert <i class="fas fa-arrow-right ms-1"></i></a>
+                                ${actionBtn}
                             </div>
                         </div>
-                    `).join('')}
+                    `}).join('')}
                 </div>
             </div>
         </div>
@@ -282,7 +305,7 @@ function renderSkills(skills) {
             <div class="h-100 p-4 border border-theme rounded-4">
                 <div class="d-flex justify-content-between align-items-center pb-2 mb-4">
                      <h3 class="text-theme mb-0 fst-italic">Soft Skills</h3>
-                     <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" title="🟢 Proficient | 🟡 Intermediate | 🔴 Beginner"></i>
+                     <i class="fas fa-info-circle text-theme" data-bs-toggle="tooltip" data-bs-html="true" title="<span class='dot-indicator bg-success'></span> Proficient <br> <span class='dot-indicator bg-warning'></span> Intermediate <br> <span class='dot-indicator bg-danger'></span> Beginner"></i>
                 </div>
                 <!-- Row 1: Languages -->
                 <div class="d-flex flex-wrap gap-2 justify-content-start mb-2">
